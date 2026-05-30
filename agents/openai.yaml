@@ -1,0 +1,4 @@
+interface:
+  display_name: "行业数据"
+  short_description: "数据源注册中心 · 中国宏观 + 世界银行 + 可扩展"
+  default_prompt: "查询宏观经济数据或世界银行跨国对比数据，也可新增数据源"

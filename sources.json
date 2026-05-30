@@ -1,0 +1,56 @@
+{
+  "$schema": "数据源注册表 — 新增一个条目即可扩展",
+  "sources": [
+    {
+      "id": "macro_china",
+      "name": "中国宏观经济",
+      "description": "GDP / CPI / PPI / PMI / M2 / 进出口",
+      "provider": "国家统计局 / 央行 / 海关",
+      "auth": "none",
+      "script": "scripts/sources/macro_china.py",
+      "functions": ["gdp", "cpi", "ppi", "pmi", "m2", "trade", "all_macro"],
+      "enabled": true
+    },
+    {
+      "id": "world_bank",
+      "name": "世界银行开放数据",
+      "description": "200+ 国家跨国指标（GDP/通胀/人口/贸易/FDI）",
+      "provider": "World Bank",
+      "auth": "none",
+      "script": "scripts/sources/world_bank.py",
+      "functions": ["gdp", "gdp_growth", "inflation", "population", "compare_indicator"],
+      "enabled": true
+    },
+    {
+      "id": "cninfo",
+      "name": "巨潮资讯网",
+      "description": "A股上市公司公告查询（年报/半年报/季报/IPO/分红）",
+      "provider": "巨潮资讯网 cninfo.com.cn",
+      "auth": "none",
+      "script": "scripts/sources/cninfo.py",
+      "functions": ["query", "search", "annual_reports", "ipo_documents"],
+      "enabled": true
+    },
+    {
+      "id": "a_stock_data",
+      "name": "A股全栈数据",
+      "description": "行情/研报/龙虎榜/基本面（a-stock-data 核心接口）",
+      "provider": "腾讯/东财/百度/新浪",
+      "auth": "none",
+      "script": "scripts/sources/a_stock_data.py",
+      "functions": ["quote", "kline", "research_reports", "longhu", "stock_info", "stock_overview"],
+      "enabled": true
+    },
+    {
+      "id": "qcc",
+      "name": "企查查",
+      "description": "企业工商/风险/知产/经营信息（通过 MCP 工具调用）",
+      "provider": "企查查 MCP",
+      "auth": "mcp",
+      "script": "scripts/sources/qcc.py",
+      "functions": ["tools_list"],
+      "enabled": true,
+      "note": "此数据源通过 MCP 协议调用，AI 自动路由到对应工具。直接说需求即可，如：查一下某公司的工商信息、风险信息等"
+    }
+  ]
+}
