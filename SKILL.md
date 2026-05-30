@@ -1,6 +1,6 @@
 ---
-name: "行业数据"
-description: "行业分析报告数据查询。统一的注册表式数据源管理器，支持通过 sources.json 动态挂载新的数据接口。内置中国宏观（GDP/CPI/PPI/PMI/M2/进出口）和世界银行（200+ 国家跨国指标）两个数据源。当用户需要宏观经济数据、全球指标对比或行业分析基础数据时使用。"
+name: industry-data（行业数据）
+description: 行业分析报告数据查询。统一的注册表式数据源管理器，支持通过 sources.json 动态挂载新的数据接口。内置中国宏观（GDP/CPI/PPI/PMI/M2/进出口）和世界银行（200+ 国家跨国指标）两个数据源。当用户需要宏观经济数据、全球指标对比或行业分析基础数据时使用。
 ---
 
 # 行业数据 Skill
@@ -19,6 +19,9 @@ python3 manager.py list
 |----|------|------|------|
 | `macro_china` | 中国宏观经济 | GDP / CPI / PPI / PMI / M2 / 进出口 | 无需 |
 | `world_bank` | 世界银行 | 200+ 国家跨国指标 | 无需 |
+| `a_stock_data` | A股数据 | A 股行情数据 | 无需 |
+| `cninfo` | 巨潮资讯 | 上市公司公告查询 | 需要 .env 配置 |
+| `qcc` | 企查查 | 工商/风险/知产/经营数据 | 需要 .env 配置 |
 
 ## 对话用法
 
@@ -27,6 +30,8 @@ python3 manager.py list
 - "查 GDP" → macro_china
 - "对比中美日 GDP" → world_bank
 - "拉 CPI 和 M2" → macro_china
+- "查唯赛勃的公告" → cninfo
+- "查某公司的工商信息" → qcc
 
 ## 手动执行
 
